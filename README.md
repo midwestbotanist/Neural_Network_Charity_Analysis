@@ -11,19 +11,19 @@ Due to the complexity of the analysis being done, traditional analysis/machine l
 
 1) What variable(s) are considered the target(s) for your model?
     
-    A. The variable targeted is the IS_SUCCESSFUL data, as this notes whether or not the funds were successfully utilized or not.
+    * The variable targeted is the IS_SUCCESSFUL data, as this notes whether or not the funds were successfully utilized or not.
 
 ![IS_SUCCESSFUL_selection_code](https://user-images.githubusercontent.com/101941048/215592677-92e3aed8-c43a-4097-b96c-0fc46ee11f43.png)
 
 2) What variable(s) are considered to be the features for your model?
     
-    A. The variables being treated as features are are the: APPLICATION_TYPE, AFFILIATION, CLASSIFICATION, USE_CASE, ORGANIZATION, INCOME_AMT, and SPECIAL_CONSIDERATIONS data
+    * The variables being treated as features are are the: APPLICATION_TYPE, AFFILIATION, CLASSIFICATION, USE_CASE, ORGANIZATION, INCOME_AMT, and SPECIAL_CONSIDERATIONS data
     
     ![Categorical_Lists](https://user-images.githubusercontent.com/101941048/215592066-50e9101e-b773-41be-82dc-5fff49b4c568.png)
     
 3) What variable(s) are neither targets nor features, and should be removed from the input data?
     
-    A. Neither the NAME nor EIN information are targets nor features, so they have been removed from the input data.
+    * Neither the NAME nor EIN information are targets nor features, so they have been removed from the input data.
 
 ![dropped_EIN_NAME_columns](https://user-images.githubusercontent.com/101941048/215592367-3d4c7538-9bb5-4721-b223-02e3eaa2072a.png)
 
@@ -31,15 +31,15 @@ Due to the complexity of the analysis being done, traditional analysis/machine l
 
 4) How many neurons, layers, and activation functions did you select for your neural network model, and why?
 
-    A. Using data from the initial model due to it being the best performer: 88 neurons in first hidden layer, 32 neurons in second hidden layer, with "relu" being the hidden layer activation for both and "sigmoid" being the output layer activation function. Adding additional layers and using other activation types did not improve performance, which led to these being chosen.
+    * Using data from the initial model due to it being the best performer: 88 neurons in first hidden layer, 32 neurons in second hidden layer, with "relu" being the hidden layer activation for both and "sigmoid" being the output layer activation function. Adding additional layers and using other activation types did not improve performance, which led to these being chosen.
 
 5) Were you able to achieve the target model performance?
 
-  A. I was unable to achieve the target model performance of 75%. All of my trials returned an average of 72%.
+    * I was unable to achieve the target model performance of 75%. All of my trials returned an average of 72%.
 
 6) What steps did you take to try and increase model performance?
   
-  A. In the first optimization, the step taken to improve performance was to place the ASK_AMT values into bins, no additional changes. In the second optimization, the binned ASK_AMT values were used, the APPLICATION_Type values < 300 were binned (had been <500 before), and the CLASSIFICATION values < 200 were binned (had been <500 before). In the third and final optimization attempt, the binned ASK_AMT values were used, APPLICATION_TYPE and CLASSIFICATION values both returned to <500 being binned, a third hidden layer added, and the hidden layer activation types change from "relu" to "tanh". In all cases, the loss was high and accuracy only 72%. Despite many other attempts, there was an inability to find something to improve the loss and accuracy measures.
+    * In the first optimization, the step taken to improve performance was to place the ASK_AMT values into bins, no additional changes. In the second optimization, the binned ASK_AMT values were used, the APPLICATION_Type values < 300 were binned (had been <500 before), and the CLASSIFICATION values < 200 were binned (had been <500 before). In the third and final optimization attempt, the binned ASK_AMT values were used, APPLICATION_TYPE and CLASSIFICATION values both returned to <500 being binned, a third hidden layer added, and the hidden layer activation types change from "relu" to "tanh". In all cases, the loss was high and accuracy only 72%. Despite many other attempts, there was an inability to find something to improve the loss and accuracy measures.
   
   ![AlphabetSoupCharity_InitialVSOptimizations_Table](https://user-images.githubusercontent.com/101941048/215591317-664577ac-f3cd-4756-b329-908467d782ff.png)
 
